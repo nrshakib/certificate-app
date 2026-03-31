@@ -512,7 +512,7 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
 
         <table
           style={{
-            width: "100%",
+            width: "80%",
             borderCollapse: "collapse",
             fontSize: "14px",
             marginTop: "4px",
@@ -528,6 +528,7 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
                   paddingTop: "4px",
                   paddingBottom: "4px",
                   width: "40%",
+                  textAlign: "left",
                   ...addFont,
                 }}
               >
@@ -537,8 +538,7 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
                 style={{
                   border: "3px solid #FFFFFF",
                   padding: "4px 12px",
-                  textAlign: "left",
-                  width: "20%",
+                  width: "30%",
                   ...addFont,
                 }}
               >
@@ -553,6 +553,7 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
                 style={{
                   border: "3px solid #FFFFFF",
                   padding: "4px 12px",
+                  textAlign: "left",
                   ...addFont,
                 }}
               >
@@ -567,6 +568,7 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
                   paddingTop: "4px",
                   paddingBottom: "4px",
                   width: "40%",
+                  textAlign: "left",
                   ...addFont,
                 }}
               >
@@ -576,8 +578,7 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
                 style={{
                   border: "3px solid #FFFFFF",
                   padding: "4px 12px",
-                  textAlign: "left",
-                  width: "20%",
+                  width: "10%",
                   ...addFont,
                 }}
               >
@@ -592,6 +593,7 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
                 style={{
                   border: "3px solid #FFFFFF",
                   padding: "4px 12px",
+                  textAlign: "left",
                   ...addFont,
                 }}
               >
@@ -603,110 +605,137 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
       </section>
 
       {/* Signature Section */}
-      <section>
+      <section style={{ marginTop: "40px", fontSize: "11px" }}>
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr 1fr",
-            gap: "32px",
-            fontSize: "12px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "40px",
           }}
         >
-          {/* Left */}
-          <div>
-            <div
-              style={{
-                marginBottom: "2px",
-                fontSize: "15px",
-                fontWeight: "bold",
-                borderBottom: "2px solid #333",
-                paddingBottom: "8px",
-                ...addFont,
-              }}
-            >
-              {cityDate}
+          {/* Upper Row */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            {/* ROW 1 LEFT */}
+            <div>
+              <div
+                style={{
+                  borderBottom: "2px solid #000",
+                  fontWeight: "bold",
+                  width: "220px",
+                  fontSize: "12px",
+                  textAlign: "left",
+                }}
+              >
+                {cityDate}
+              </div>
+              <div
+                style={{ fontSize: "9px", marginTop: "1px", textAlign: "left" }}
+              >
+                Ort/Datum
+                <br />
+                (Schulstempel)
+              </div>
             </div>
-            <div
-              style={{
-                fontSize: "8px",
-                color: "#000",
-                marginBottom: "60px",
-                ...addFont,
-              }}
-            >
-              Ort/Datum
-              <br />
-              (Schulstempel)
-            </div>
-            <div style={{ paddingTop: "25px" }} />
-            <div
-              style={{
-                marginBottom: "2px",
-                borderBottom: "1px solid #333",
-                paddingBottom: "4px",
-                ...addFont,
-              }}
-            >
-              {principalName}
-            </div>
-            <div style={{ fontSize: "8px", color: "#000", ...addFont }}>
-              Schulleitung
+
+            {/* ROW 1 RIGHT */}
+            <div>
+              <div
+                style={{
+                  borderBottom: "2px solid #000",
+                  borderTop: "2px solid #000",
+                  paddingBottom: "4px",
+                  width: "220px",
+                  fontWeight: "bold",
+                  textAlign: "left",
+                }}
+              >
+                {principalName}
+              </div>
+              <div
+                style={{ fontSize: "9px", marginTop: "1px", textAlign: "left" }}
+              >
+                Schulleitung (Name)
+              </div>
             </div>
           </div>
 
-          {/* Middle */}
-          <div>
-            <div
-              style={{
-                fontSize: "15px",
-                borderBottom: "2px solid transparent",
-                paddingBottom: "8px",
-                marginBottom: "2px",
-              }}
-            />
-            <div style={{ fontSize: "8px", marginBottom: "60px" }}></div>
-            <div style={{ paddingTop: "25px" }} />
-            <div
-              style={{
-                marginBottom: "2px",
-                borderBottom: "1px solid #333",
-                paddingBottom: "4px",
-                ...addFont,
-              }}
-            >
-              &nbsp;
+          {/* Lower Row */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            {/* ROW 2 LEFT */}
+            <div>
+              <div
+                style={{
+                  borderBottom: "2px solid #000",
+                  fontWeight: "bold",
+                  paddingBottom: "1px",
+                  width: "150px",
+                  textAlign: "left",
+                  fontSize: "12px",
+                }}
+              >
+                {cityDate}
+              </div>
+              <div
+                style={{ fontSize: "9px", marginTop: "1px", textAlign: "left" }}
+              >
+                Ort/Datum
+              </div>
             </div>
-            <div style={{ fontSize: "8px", color: "#000", ...addFont }}>
-              Klassenlehrkraft
-            </div>
-          </div>
 
-          {/* Right */}
-          <div>
-            <div
-              style={{
-                fontSize: "15px",
-                borderBottom: "2px solid transparent",
-                paddingBottom: "8px",
-                marginBottom: "2px",
-              }}
-            />
-            <div style={{ fontSize: "8px", marginBottom: "60px" }}></div>
-            <div style={{ paddingTop: "25px" }} />
-            <div
-              style={{
-                marginBottom: "2px",
-                borderBottom: "1px solid #333",
-                paddingBottom: "4px",
-                ...addFont,
-              }}
-            >
-              &nbsp;
-            </div>
-            <div style={{ fontSize: "8px", color: "#000", ...addFont }}>
-              Auszubildende/r
+            {/* ROW 2 RIGHT */}
+            <div>
+              <div
+                style={{
+                  borderBottom: "2px solid #000",
+                  paddingBottom: "4px",
+                  width: "220px",
+                }}
+              >
+                &nbsp;
+              </div>
+              <div
+                style={{ fontSize: "9px", marginTop: "1px", textAlign: "left" }}
+              >
+                Auszubildende/r bzw. erziehungsb. Person
+              </div>
             </div>
           </div>
+        </div>
+
+        {/* FOOTNOTE TEXT */}
+        <div
+          style={{
+            marginTop: "30px",
+            textAlign: "center",
+            fontSize: "11px",
+            fontStyle: "italic",
+          }}
+        >
+          Notenstufen: 1=sehr gut, 2=gut, 3=befriedigend, 4=ausreichend,
+          5=mangelhaft, 6=ungenügend
+        </div>
+
+        <div
+          style={{
+            marginTop: "10px",
+            textAlign: "center",
+            fontSize: "10px",
+          }}
+        >
+          * Bei den Kompetenzbereichen und Einsatzbereichen, die in diesem Jahr
+          nicht unterrichtet bzw. absolviert wurden, stehen keine Noten.
         </div>
       </section>
     </div>
