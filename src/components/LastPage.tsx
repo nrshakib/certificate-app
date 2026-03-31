@@ -529,6 +529,7 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
                   paddingBottom: "4px",
                   width: "40%",
                   textAlign: "left",
+                  lineHeight: "1.2",
                   ...addFont,
                 }}
               >
@@ -565,7 +566,6 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
                 style={{
                   border: "3px solid #FFFFFF",
                   paddingRight: "12px",
-                  paddingTop: "4px",
                   paddingBottom: "4px",
                   width: "40%",
                   textAlign: "left",
@@ -577,7 +577,7 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
               <td
                 style={{
                   border: "3px solid #FFFFFF",
-                  padding: "4px 12px",
+                  padding: "0 12px",
                   width: "10%",
                   ...addFont,
                 }}
@@ -592,7 +592,7 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
               <td
                 style={{
                   border: "3px solid #FFFFFF",
-                  padding: "4px 12px",
+                  padding: "0 12px",
                   textAlign: "left",
                   ...addFont,
                 }}
@@ -610,7 +610,7 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: "40px",
+            gap: "20px",
           }}
         >
           {/* Upper Row */}
@@ -670,6 +670,7 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
             style={{
               display: "flex",
               flexDirection: "row",
+              alignItems: "center",
               justifyContent: "space-between",
             }}
           >

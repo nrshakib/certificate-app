@@ -512,7 +512,7 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
         </table>
       </section>
 
-      <footer style={{ marginTop: "50px" }}>
+      <footer style={{ marginTop: "110px" }}>
         <p style={{ fontSize: "12px", ...addFont, textAlign: "left" }}>
           * Bei den Kompetenzbereichen und Einsatzbereichen, die in diesem Jahr
           nicht unterrichtet bzw. absolviert wurden, stehen keine Noten.
