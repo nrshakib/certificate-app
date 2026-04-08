@@ -47,8 +47,9 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
     },
   ];
 
-  const traineeName =
-    `${trainee.firstName || ""} ${trainee.lastName || ""}`.trim();
+  // const traineeName = `${trainee.firstName || ""} ${trainee.lastName || ""}`
+  //   .trim()
+  //   .toLocaleLowerCase();
   const traineeAddress = [trainee.street, trainee.postalCode, trainee.city]
     .filter(Boolean)
     .join(", ");
@@ -70,12 +71,20 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
     boxSizing: "border-box",
   };
 
-  const addFont: React.CSSProperties = {
-    fontFamily: '"Times New Roman", Times, serif',
-  };
+  // const addFont: React.CSSProperties = {
+  //   fontFamily: '"Times New Roman", Times, serif',
+  // };
 
   return (
-    <div style={{ fontFamily: "Arial, sans-serif", color: "#000" }}>
+    <div
+      style={{
+        // fontFamily: '"Georgia", serif',
+        fontSize: "12px",
+        letterSpacing: "0.6px",
+        // lineHeight: "1.3",
+        color: "#000",
+      }}
+    >
       {/* Header */}
       <section
         style={{
@@ -95,16 +104,27 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
             flexDirection: "column",
             alignItems: "center",
             textAlign: "center",
-            lineHeight: "1.6",
           }}
         >
-          <p style={{ margin: 0, fontWeight: "bold", fontSize: "16px" }}>
+          <p style={{ margin: 0, fontWeight: "bold", fontSize: "14px" }}>
             {schoolName}
           </p>
-          <p style={{ margin: 0, fontSize: "14px" }}>
+          <p
+            style={{
+              margin: 0,
+              fontSize: "12px",
+              fontFamily: '"Inter", sans-serif',
+            }}
+          >
             {school.street || "Liebigstraße 14-16"}
           </p>
-          <p style={{ margin: 0, fontSize: "14px" }}>
+          <p
+            style={{
+              margin: 0,
+              fontSize: "12px",
+              fontFamily: '"Inter", sans-serif',
+            }}
+          >
             {school.postalCode || "35390"} {school.city || "Giessen"}
           </p>
         </div>
@@ -139,56 +159,133 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
       </div>
 
       {/* Trainee Info */}
-      <section style={{ width: "100%", margin: "0 auto" }}>
-        {[
-          { label: "Vor-/ Zuname", value: traineeName },
-          {
-            label: "Geburtstag",
-            value: trainee.dateOfBirth
-              ? format(new Date(trainee.dateOfBirth), "yyyy-MM-dd", {
-                  locale: de,
-                })
-              : "",
-          },
-          { label: "Anschrift", value: traineeAddress },
-        ].map((item, i) => (
+      <section style={{ margin: "0 auto" }}>
+        <div
+          style={{
+            display: "flex",
+            width: "60%",
+            alignItems: "center",
+            justifyItems: "center",
+            gap: "2px",
+            margin: "0 auto",
+            marginLeft: "32%",
+          }}
+        >
+          {/* Key */}
           <div
-            key={i}
             style={{
               display: "flex",
+              flexDirection: "column",
+              width: "40%",
               justifyContent: "center",
               marginBottom: "6px",
-              gap: "10px",
-              fontSize: "13px",
+              gap: "8px",
+              fontSize: "12px",
             }}
           >
-            <div
+            <span
               style={{
                 width: "120px",
                 textAlign: "right",
-                marginRight: "10px",
+                // marginRight: "10px",
+                letterSpacing: "1px",
               }}
             >
-              {item.label}
-            </div>
+              Vor-/ Zuname
+            </span>{" "}
             <span
               style={{
-                width: "30%",
-                textAlign: "left",
-                borderBottom: "0.4pt solid #000",
+                width: "120px",
+                textAlign: "right",
+                // marginRight: "10px",
+                letterSpacing: "1px",
               }}
             >
-              {item.value}
+              Geburtstag
+            </span>{" "}
+            <span
+              style={{
+                width: "120px",
+                textAlign: "right",
+                // marginRight: "10px",
+                letterSpacing: "1px",
+              }}
+            >
+              Anschrift
             </span>
           </div>
-        ))}
 
+          {/* value */}
+          <div
+            style={{
+              display: "flex",
+              width: "100%",
+              flexDirection: "column",
+              justifyContent: "center",
+              marginBottom: "10px",
+              gap: "10px",
+              fontSize: "12px",
+            }}
+          >
+            <span
+              style={{
+                width: "35%",
+                textAlign: "left",
+                textDecoration: "underline",
+                textUnderlineOffset: "8px",
+                fontFamily: "'Inter', sans-serif",
+                lineHeight: "2",
+                fontWeight: "500",
+              }}
+            >
+              trainee trainsee
+            </span>
+            <span
+              style={{
+                width: "25%",
+                textAlign: "left",
+                textDecoration: "underline",
+                textUnderlineOffset: "8px",
+                fontFamily: "'Inter', sans-serif",
+                lineHeight: "2",
+              }}
+            >
+              {trainee.dateOfBirth
+                ? format(new Date(trainee.dateOfBirth), "yyyy-MM-dd", {
+                    locale: de,
+                  })
+                : ""}
+            </span>
+            <span
+              style={{
+                width: "70%",
+                textAlign: "left",
+                textDecoration: "underline",
+                textUnderlineOffset: "8px",
+                fontFamily: "'Inter', sans-serif",
+                lineHeight: "2",
+              }}
+            >
+              {traineeAddress}
+            </span>
+          </div>
+        </div>
+        {/* <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginBottom: "6px",
+            gap: "12px",
+            fontSize: "12px",
+          }}
+        ></div> */}
         <p
           style={{
             marginTop: "18px",
-            lineHeight: "1.4",
+            lineHeight: "1.2",
             textAlign: "left",
-            fontSize: "14px",
+            fontSize: "12px",
+            fontFamily: '"Inter", serif',
           }}
         >
           Hat im Schuljahr{" "}
@@ -202,13 +299,13 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
           </b>{" "}
           das {trainingYear}. Ausbildungsjahr an der o.a. Pflegeschule besucht.
         </p>
-
         <p
           style={{
             marginTop: "4px",
             marginBottom: "10px",
             textAlign: "left",
-            fontSize: "14px",
+            fontSize: "12px",
+            fontFamily: '"Arial", sans-serif',
           }}
         >
           Die Leistungen in den einzelnen Ausbildungsbereichen werden wie folgt
@@ -221,9 +318,9 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
         <p
           style={{
             fontWeight: "bold",
-            fontSize: "14px",
+            fontSize: "12px",
             textAlign: "center",
-            padding: "8px 0 ",
+            padding: "4px 0 ",
             backgroundColor: "#DBEAFE",
             margin: 0,
           }}
@@ -243,7 +340,7 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
               <th
                 style={{
                   ...cellStyle,
-                  fontSize: "14px",
+                  fontSize: "12px",
                   width: "41%",
                   textAlign: "left",
                   paddingLeft: "32px",
@@ -256,7 +353,7 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
               <th
                 style={{
                   ...cellStyle,
-                  fontSize: "14px",
+                  fontSize: "12px",
                   width: "14.3%",
                   textAlign: "left",
                   paddingLeft: "5px",
@@ -269,7 +366,7 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
               <th
                 style={{
                   ...cellStyle,
-                  fontSize: "14px",
+                  fontSize: "12px",
                   width: "14.3%",
                   textAlign: "left",
                   paddingLeft: "5px",
@@ -282,7 +379,7 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
               <th
                 style={{
                   ...cellStyle,
-                  fontSize: "14px",
+                  fontSize: "12px",
                   width: "14.3%",
                   textAlign: "left",
                   paddingLeft: "5px",
@@ -295,7 +392,7 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
               <th
                 style={{
                   ...cellStyle,
-                  fontSize: "14px",
+                  fontSize: "12px",
                   width: "15%",
                   borderRight: "0.5pt solid #000",
                   textAlign: "left",
@@ -348,7 +445,8 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
                           <td
                             style={{
                               padding: "6px 4px",
-                              fontSize: "12px",
+                              fontSize: "13px",
+                              fontFamily: "Inter, sans-serif",
                               height: "100%",
                               lineHeight: "1.3",
                               display: "flex",
@@ -366,6 +464,7 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
                     style={{
                       ...cellStyle,
                       fontSize: "13px",
+                      fontFamily: "Inter, sans-serif",
                       borderBottom: bottomBorder,
                     }}
                   >
@@ -375,6 +474,7 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
                     style={{
                       ...cellStyle,
                       fontSize: "13px",
+                      fontFamily: "Inter, sans-serif",
                       borderBottom: bottomBorder,
                     }}
                   >
@@ -384,6 +484,7 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
                     style={{
                       ...cellStyle,
                       fontSize: "13px",
+                      fontFamily: "Inter, sans-serif",
                       borderBottom: bottomBorder,
                     }}
                   >
@@ -399,6 +500,7 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
                         ...cellStyle,
                         fontSize: "13px",
                         verticalAlign: "middle",
+                        fontFamily: "Inter, sans-serif",
                         borderRight: "0.5pt solid #000",
                         borderBottom: "0.5pt solid #000",
                         height: "100%",
@@ -413,7 +515,14 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
           </tbody>
         </table>
 
-        <div style={{ marginTop: "8px", fontSize: "14px", textAlign: "left" }}>
+        <div
+          style={{
+            marginTop: "8px",
+            fontSize: "12px",
+            textAlign: "left",
+            fontFamily: '"Inter", sans-serif',
+          }}
+        >
           <p style={{ margin: "2px 0" }}>
             ¹ Note und Faktor müssen multipliziert werden, daraus ergibt sich
             der Ʃ Wert.
@@ -439,7 +548,7 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
               <th
                 style={{
                   ...cellStyle,
-                  fontSize: "14px",
+                  fontSize: "13px",
                   width: "45%",
                   padding: "5px 0",
                 }}
@@ -449,7 +558,7 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
               <th
                 style={{
                   ...cellStyle,
-                  fontSize: "14px",
+                  fontSize: "13px",
                   width: "auto",
                   whiteSpace: "nowrap",
                   paddingRight: "5px",
@@ -461,7 +570,7 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
               <th
                 style={{
                   ...cellStyle,
-                  fontSize: "14px",
+                  fontSize: "13px",
                   borderRight: "0.5pt solid #000",
                   width: "50%",
                   padding: "5px 0",
@@ -476,7 +585,8 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
               <td
                 style={{
                   ...cellStyle,
-                  fontSize: "14px",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "13px",
                   borderBottom: "0.5pt solid #000",
                   padding: "6px 4px",
                 }}
@@ -486,7 +596,8 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
               <td
                 style={{
                   ...cellStyle,
-                  fontSize: "14px",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "13px",
                   borderBottom: "0.5pt solid #000",
                   padding: "6px 4px",
                 }}
@@ -496,7 +607,8 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
               <td
                 style={{
                   ...cellStyle,
-                  fontSize: "14px",
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "13px",
                   fontWeight: "bold",
                   borderBottom: "0.5pt solid #000",
                   borderRight: "0.5pt solid #000",
@@ -513,7 +625,13 @@ const FirstPage: React.FC<FirstPageProps> = ({ data }) => {
       </section>
 
       <footer style={{ marginTop: "110px" }}>
-        <p style={{ fontSize: "12px", ...addFont, textAlign: "left" }}>
+        <p
+          style={{
+            fontSize: "10px",
+            fontFamily: "Arial, Helvetica, sans-serif;",
+            textAlign: "left",
+          }}
+        >
           * Bei den Kompetenzbereichen und Einsatzbereichen, die in diesem Jahr
           nicht unterrichtet bzw. absolviert wurden, stehen keine Noten.
         </p>
