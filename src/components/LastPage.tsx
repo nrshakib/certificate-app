@@ -49,10 +49,11 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
         <p
           style={{
             fontWeight: "bold",
-            fontSize: "13px",
+            fontSize: "12px",
             textAlign: "center",
-            padding: "6px 0",
+            padding: "4px 0 ",
             backgroundColor: "#DBEAFE",
+            margin: 0,
           }}
         >
           Praktische Ausbildung*
@@ -69,7 +70,7 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
             <tr>
               <th
                 style={{
-                  fontSize: "14px",
+                  fontSize: "13px",
                   borderTop: "0.5pt solid #000",
                   borderLeft: "0.5pt solid #000",
                   borderRight: "none",
@@ -85,7 +86,7 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
               </th>
               <th
                 style={{
-                  fontSize: "14px",
+                  fontSize: "13px",
                   borderTop: "0.5pt solid #000",
                   borderLeft: "0.5pt solid #000",
                   borderRight: "none",
@@ -102,7 +103,7 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
               </th>
               <th
                 style={{
-                  fontSize: "14px",
+                  fontSize: "13px",
                   borderTop: "0.5pt solid #000",
                   borderLeft: "0.5pt solid #000",
                   borderRight: "none",
@@ -119,7 +120,7 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
               </th>
               <th
                 style={{
-                  fontSize: "14px",
+                  fontSize: "13px",
                   borderTop: "0.5pt solid #000",
                   borderLeft: "0.5pt solid #000",
                   borderRight: "none",
@@ -136,7 +137,7 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
               </th>
               <th
                 style={{
-                  fontSize: "14px",
+                  fontSize: "13px",
                   borderTop: "0.5pt solid #000",
                   borderLeft: "0.5pt solid #000",
                   borderRight: "0.5pt solid #000",
@@ -191,7 +192,8 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
                               verticalAlign: "middle",
                               paddingTop: "4px",
                               paddingBottom: "4px",
-                              fontSize: "12px",
+                              fontSize: "13px",
+                              fontFamily: "Inter, sans-serif",
                             }}
                           >
                             {phase.num ? `${phase.num}.` : ""}
@@ -201,6 +203,7 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
                               padding: "4px 5px",
                               verticalAlign: "middle",
                               fontSize: "13px",
+                              fontFamily: "Inter, sans-serif",
                               textAlign: "left",
                               lineHeight: "1.2",
                             }}
@@ -215,6 +218,7 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
                   <td
                     style={{
                       fontSize: "13px",
+                      fontFamily: "Inter, sans-serif",
                       borderTop: "0.5pt solid #000",
                       borderLeft: "0.5pt solid #000",
                       borderBottom: bottomBorder,
@@ -231,6 +235,7 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
                   <td
                     style={{
                       fontSize: "13px",
+                      fontFamily: "Inter, sans-serif",
                       borderTop: "0.5pt solid #000",
                       borderLeft: "0.5pt solid #000",
                       borderBottom: bottomBorder,
@@ -247,6 +252,7 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
                   <td
                     style={{
                       fontSize: "13px",
+                      fontFamily: "Inter, sans-serif",
                       borderTop: "0.5pt solid #000",
                       borderLeft: "0.5pt solid #000",
                       borderBottom: bottomBorder,
@@ -265,6 +271,7 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
                       rowSpan={practicePhases.length}
                       style={{
                         fontSize: "13px",
+                        fontFamily: "Inter, sans-serif",
                         borderTop: "0.5pt solid #000",
                         borderLeft: "0.5pt solid #000",
                         borderRight: "0.5pt solid #000",
@@ -291,7 +298,14 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
           </tbody>
         </table>
 
-        <div style={{ marginTop: "8px", fontSize: "13px", textAlign: "left" }}>
+        <div
+          style={{
+            marginTop: "8px",
+            fontSize: "12px",
+            textAlign: "left",
+            fontFamily: "Inter, sans-serif",
+          }}
+        >
           <p style={{ margin: "2px 0" }}>
             ¹ Note und Faktor müssen multipliziert werden, daraus ergibt sich
             der Ʃ Wert.
@@ -430,7 +444,13 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
       <section
         style={{ marginTop: "15px", marginBottom: "20px", fontSize: "14px" }}
       >
-        <div style={{ width: "100%" }}>
+        <div
+          style={{
+            width: "100%",
+            fontFamily: "Inter, sans-serif",
+            fontSize: "14px",
+          }}
+        >
           <div
             style={{
               border: "1px solid #000",
@@ -529,8 +549,10 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
                   paddingBottom: "4px",
                   width: "40%",
                   textAlign: "left",
-                  lineHeight: "1.2",
-                  ...addFont,
+                  lineHeight: "1.1",
+                  fontFamily: "Georgia, serif",
+                  fontSize: "13px",
+                  letterSpacing: "0.02em",
                 }}
               >
                 Theoretischer und praktischer Unterricht
@@ -540,7 +562,8 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
                   border: "3px solid #FFFFFF",
                   padding: "4px 12px",
                   width: "30%",
-                  ...addFont,
+                  fontFamily: "Georgia, serif",
+                  fontSize: "13px",
                 }}
               >
                 <span style={{ padding: "0 8px" }}>
@@ -555,7 +578,9 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
                   border: "3px solid #FFFFFF",
                   padding: "4px 12px",
                   textAlign: "left",
-                  ...addFont,
+                  fontFamily: "Georgia, serif",
+                  fontSize: "13px",
+                  letterSpacing: "0.02em",
                 }}
               >
                 Stunden
@@ -569,7 +594,9 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
                   paddingBottom: "4px",
                   width: "40%",
                   textAlign: "left",
-                  ...addFont,
+                  fontFamily: "Georgia, serif",
+                  fontSize: "13px",
+                  letterSpacing: "0.02em",
                 }}
               >
                 Praktische Ausbildung
@@ -579,7 +606,8 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
                   border: "3px solid #FFFFFF",
                   padding: "0 12px",
                   width: "10%",
-                  ...addFont,
+                  fontFamily: "Georgia, serif",
+                  fontSize: "13px",
                 }}
               >
                 <span style={{ padding: "0 8px" }}>
@@ -594,7 +622,9 @@ const LastPage: React.FC<LastPageProps> = ({ data }) => {
                   border: "3px solid #FFFFFF",
                   padding: "0 12px",
                   textAlign: "left",
-                  ...addFont,
+                  fontFamily: "Georgia, serif",
+                  fontSize: "13px",
+                  letterSpacing: "0.02em",
                 }}
               >
                 Stunden
